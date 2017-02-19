@@ -50,10 +50,22 @@ app.route('/costumers')
       return;
     }else{
       mongoClient.connect(url, function(err, db){
-        assert.equal(null, err);
+        // assert.equal(null, err);
+        if (err != null){
+          console.log(err.message);
+          db.close();
+          res.status(500).send("An error occurred, please try again");
+          return;
+        }
         var cursor = db.collection(costCollection).find({"id":id});
         cursor.forEach(function(doc,err) {
-                         assert.equal(null, err)
+                        //  assert.equal(null, err)
+                        if (err != null){
+                            console.log(err.message);
+                            db.close();
+                            res.status(500).send("An error occurred, please try again");
+                            return;
+                         }
                          resultArray.push(doc);
                        },
                        function() {
