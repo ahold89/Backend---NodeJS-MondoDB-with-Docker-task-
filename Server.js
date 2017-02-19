@@ -173,7 +173,13 @@ app.route('/costumers')
       if (err != null){
         console.log(err.message)
       }
-      assert.equal(null, err);
+      // assert.equal(null, err);
+      if (err != null){
+        console.log(err.message);
+        db.close();
+        res.status(500).send("An error occurred, please try again");
+        return;
+      }
 
       //ID is unique - no duplicates allowed:
       db.collection(costCollection).ensureIndex({id:1}, {unique:true}, function(err, indexName){
