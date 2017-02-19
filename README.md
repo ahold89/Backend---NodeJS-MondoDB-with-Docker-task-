@@ -20,7 +20,7 @@ If you encounter problems, make sure that mongoDB ip in 'Server.js' file is set 
 
 ###REST APIs
 
-Body schema for creating/updating ('POST /createCostumer', 'PATCH /updateCostumer') costumer:
+Body schema for creating/updating costumer:
 
 ```json
 {"id": "[A number string with length 1-9]",
@@ -30,6 +30,7 @@ Body schema for creating/updating ('POST /createCostumer', 'PATCH /updateCostume
  "credit_card_tokens":["An array"]
 }
 ```
-
-In order to delete costumer by ID: 'DELETE /deleteCostumer?id={id number}'.
-In order to fetch costumer by ID: 'GET /fetchById?id={id number}'
+In order to fetch costumer by ID: 'GET /costumers?id={id number}'.
+In order to delete costumer by ID: 'DELETE /costumers?id={id number}'.
+In order to create costumer: 'POST /costumers'.
+In order to update costumer: 'PATCH /costumers'.
