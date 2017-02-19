@@ -31,6 +31,9 @@ Body schema for creating/updating costumer:
 }
 ```
 In order to fetch costumer by ID: 'GET /costumers?id={id number}'.
+
 In order to delete costumer by ID: 'DELETE /costumers?id={id number}'.
+
 In order to create costumer: 'POST /costumers'.
+
 In order to update costumer: 'PATCH /costumers'.
